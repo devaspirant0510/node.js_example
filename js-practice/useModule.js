@@ -1,16 +1,22 @@
-const getModule = require("./myModule")
-const {odd,even} = require("./myModule");
+//const {odd,even} = require("./myModule");
+const myModule  = require("./myModule");
 
 //import myM from "./myModule";
 
 //console.log(myM.even)
-console.log(odd);
+
+//불러올개 한개일때
+//
+// console.log(myModule);
+
+// 불러올개 여러개일떄
+console.log(myModule.odd);
 function chekNum(num){
     if (num%2===0){
-        return getModule.even;
+        return myModule.even;
     }
     else {
-        return getModule.odd;
+        return myModule.odd;
     }
 }
 
