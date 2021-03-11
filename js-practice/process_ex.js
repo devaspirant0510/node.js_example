@@ -15,6 +15,8 @@ console.log(`실행 시간 : ${process.uptime()}`);
 console.log(`노드경로 : ${process.execPath}`);
 // 실행 경로
 console.log(`실행경로 : ${process.cwd()}`);
+// 환경변수
+console.log(`환경변수 : ${process.arch}`);
 // nextTick
 // 우선순위 nextTick->promise->(setTimeout,setImmediate) 환경에 따라 우선순위 다름
 console.log("=======callback======")
