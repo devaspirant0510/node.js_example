@@ -1,11 +1,17 @@
 const http = require("http")
+const fs = require("fs").promises;
+
+
+
 
 const port = 8888;
-const server = http.createServer((req, res) => {
-    res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'})
-    res.write("<h1>Hello Node</h1>")
-    res.write("<p>hello Server</p>")
-    res.end("<p>hello 3.14썬</p>")
+const server = http.createServer(async (req, res) => {
+    res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
+    const data = await fs.readFile("./index.html");
+    // fs.readFile("./index.html",(err, data) => {
+    //     res.end(data);
+    // });
+    res.end(data);
 
 
 }).listen(port)
