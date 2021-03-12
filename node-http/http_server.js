@@ -6,12 +6,19 @@ const fs = require("fs").promises;
 
 const port = 8888;
 const server = http.createServer(async (req, res) => {
-    res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
-    const data = await fs.readFile("./index.html");
-    // fs.readFile("./index.html",(err, data) => {
-    //     res.end(data);
-    // });
-    res.end(data);
+    try {
+        res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
+        const data = await fs.readFile("./index.html");
+        // fs.readFile("./index.html",(err, data) => {
+        //     res.end(data);
+        // });
+        res.end(data);
+
+    }catch (err){
+        console.log(err);
+        res.writeHead(200,{'Content-Type':'text/plain; charset=utf-8'});
+        res.end(err.message);
+    }
 
 
 }).listen(port)
