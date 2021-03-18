@@ -1,0 +1,14 @@
+#title{
+    font-size: 20px;
+    margin-right: 10px;
+}
+#test-room-1{
+    border : solid black 1px;
+}
+
+#test-header{
+    font-size: 20px;
+}
+#test-description{
+    text-align: center;
+}
