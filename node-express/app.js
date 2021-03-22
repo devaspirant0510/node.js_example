@@ -17,11 +17,16 @@ app.use((req, res, next) => {
   throw new Error("에러났다.");
 }*/);
 
-app.get('/',(req, res) => {
-    //res.sendFile(path.join(__dirname,'index.html'));
-    res.json({hello:"seungho"});
+app.get('/',(req, res,next) => {
+    res.sendFile(path.join(__dirname,'index.html'));
+    //res.json({hello:"seungho"});
+    next("route");
 
 });
+
+app.get('/',((req, res) => {
+    console.log("next 함수");
+}))
 
 app.get("/about",(req, res) => {
     res.send("about");
