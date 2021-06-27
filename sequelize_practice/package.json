@@ -1,0 +1,20 @@
+{
+  "name": "sequelize_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "nunjucks": "^3.2.3",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0"
+  }
+}
