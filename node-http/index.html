@@ -2,14 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Node.js</title>
+    <title>수평선 긋기</title>
+<!--    <link rel="stylesheet" type="text/css" href="style.css">-->
 </head>
 <body>
-    <h1>
-        Hello World!!
-    </h1>
-    <h3> node.js is God</h3>
-    <h5> 3.14썬 is God</h5>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<form id="my-form" >
+    <div>
+        <label for="name">
+            name :
+            <input id="name">
+        </label>
+    </div>
+    <button type="submit">
+        submit
+    </button>
+</form>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<!--<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>-->
+<!--<div id="app">-->
+<!--    <app-header v-bind:props_data="message" v-if="main_view" >-->
 
+<!--    </app-header>-->
+<!--    <app-content v-on:content_emit="getForm" v-if="main_view">-->
+
+<!--    </app-content>-->
+<!--    <router-view v-bind:login_router="cookie_name">-->
+
+<!--    </router-view>-->
+
+<!--</div>-->
+<script>
+    const form_tag = document.querySelector("#my-form");
+    console.log("ASDF")
+    form_tag.addEventListener("submit",async (evt) => {
+        evt.preventDefault();
+        await axios.post("/",{
+            userid:evt.target.name.value
+
+        })
+    })
+    // const appHeader = {
+    //     template:"<h1>{{props_data}}</h1>",
+    //     props:['props_data']
+    // }
+    // const appContent = {
+    //     template:"<form v-on:submit='emitForm'>" +
+    //         "<div><label for='userid'> id : <input v-model='user_id' id='userid'/></label></div>" +
+    //         "<div><label for='password'> pwd: <input v-model='password' id='password'/></label></div>" +
+    //         "<button type='submit'>submit</button>"+
+    //         "</form>",
+    //     data:function(){
+    //         return{
+    //             user_id:"",
+    //             password:""
+    //         }
+    //     },
+    //     methods: {
+    //         emitForm:function (){
+    //             this.$emit("content_emit",this.user_id,this.password);
+    //
+    //         }
+    //     },
+    //
+    // }
+    // const loginComponent = {
+    //     template:"<h1>{{login_router}}</h1>",
+    //     props:['login_router']
+    // }
+    // const router = new VueRouter({
+    //     routes:[
+    //         {
+    //             path:"/login",
+    //             component:loginComponent
+    //         },
+    //     ]
+    // })
+    // new Vue({
+    //     el:"#app",
+    //     data:{
+    //         message:"hello",
+    //         main_view:true,
+    //         cookie_name:""
+    //     },
+    //     router:router,
+    //     components:{
+    //         'appHeader':appHeader,
+    //         'appContent':appContent
+    //     },
+    //     methods:{
+    //         vue_app:function (){
+    //             console.log("hello");
+    //             this.main_view = false;
+    //         },
+    //         getForm:async function (userid,password){
+    //             if (userid && password){
+    //                 console.log("처리")
+    //                 let data = await axios.post("/login",{
+    //                     userid:userid,
+    //                     password:password
+    //                 });
+    //                 this.message = data.data.userid;
+    //                 this.cookie_name = data.data.userid;
+    //             }
+    //             else{
+    //                 alert("전부다 입력하세요");
+    //             }
+    //             console.log(userid,password);
+    //
+    //         }
+    //     }
+    //
+    // });
+
+</script>
 </body>
 </html>
