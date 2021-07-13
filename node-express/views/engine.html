@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>신입사원 모집 공고</title>
+    <style>
+        th {
+            width: 150px;
+        }
+
+        td {
+            width: 150px;
+            text-align: center;
+        }
+        table,td,th,tr{
+            border:black 1px solid;
+        }
+        table {
+            border: 1px solid #444444;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+{% set node = "d" %}
+{{node}}
+<h1>{{title}}</h1>
+<table style="border:black 1px solid">
+    {% for i in list%}
+    <tr >
+        <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
