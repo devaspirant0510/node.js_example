@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% if user %}
+    <div>{{user}} 님 환영합니다.</div>
+
+    {% else %}
+    <label for="user-name">
+        <input name="user-name" id="user-name">
+    </label>
+    <button type="submit">
+        submit
+    </button>
+    {% endif %}
+</form>
+
+</body>
+</html>
