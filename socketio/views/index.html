@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="status">
+
+</div>
+<div id="chat-body">
+
+</div>
+<form id="chat-form">
+    <label for="chat-message">
+        <input id="chat-message"/>
+    </label>
+    <button type="submit">
+        submit
+    </button>
+
+</form>
+<script src="/socket.io/socket.io.js">
+
+</script>
+<script>
+    const form = document.querySelector("#chat-form");
+    const input = document.querySelector("#chat-message");
+    const chatBody = document.querySelector("#chat-body");
+    const status = document.querySelector("#status");
+
+    const socket = io.connect("http://127.0.0.1:8005", {
+        path: "/socket.io",
+        transports: ['websocket']
+    });
+    socket.on("userCount",data=>{
+        status.textContent = data+"명 접속중"
+    })
+    form.addEventListener("submit", evt => {
+        evt.preventDefault();
+        if (input.value !== "") {
+            socket.emit("message", input.value);
+            input.value = "";
+        } else {
+            alert("입력해주세요");
+        }
+    });
+    socket.on("message", (data) => {
+        console.log(data);
+        const div = document.createElement("div");
+        div.textContent = data;
+        chatBody.append(div);
+    });
+</script>
+
+</body>
+</html>
