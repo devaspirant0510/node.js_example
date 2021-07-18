@@ -1,0 +1,39 @@
+header{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#chat-room-body{
+    background-color: blanchedalmond;
+    margin: 10px;
+    border: #444444 solid 2px;
+}
+#chat-body{
+    height: 400px;
+}
+.chat-item-my{
+    margin-left: 8px;
+    margin-top: 8px;
+    padding: 10px;
+    border: #444444 1px solid;
+    border-radius: 30px;
+    background-color: yellow;
+
+}
+.chat-item-other{
+    margin-left: 8px;
+    margin-top: 8px;
+    padding: 10px;
+    border: #444444 1px solid;
+    border-radius: 30px;
+    background-color: #d2d2d2;
+}
+#chat-message{
+    padding: 10px;
+    border-radius: 15px;
+    width: 500px;
+}
+#chat-submit{
+    padding: 10px;
+    background-color: #9aff87;
+    border-radius: 10px;
+}
