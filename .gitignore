@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+sequelize_practice/config
+
+node-express/public/img
+
+socketServer/config
